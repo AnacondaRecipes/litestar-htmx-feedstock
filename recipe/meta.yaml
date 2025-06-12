@@ -1,4 +1,4 @@
-{% set version = "0.4.1" %}
+{% set version = "0.5.0" %}
 
 {% set python_min = python_min | default("3.9") %}
 
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/l/litestar-htmx/litestar_htmx-{{ version }}.tar.gz
-  sha256: ba2537008eb8cc18bfc8bee5cecb280924c7818bb1c066d79eae4b221696ca08
+  sha256: e02d1a3a92172c874835fa3e6749d65ae9fc626d0df46719490a16293e2146fb
 
 build:
   number: 0
