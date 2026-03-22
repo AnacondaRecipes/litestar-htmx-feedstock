@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<39]
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -21,6 +21,7 @@ requirements:
     - hatchling
   run:
     - python
+    - litestar
 
 test:
   imports:
@@ -36,8 +37,8 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: HTMX Integration for Litestar
-  description: HTMX Integration for Litestar
-  doc_url: https://github.com/litestar-org/litestar-htmx
+  description: Litestar HTMX provides request and response classes, types, and a plugin for working with HTMX in Litestar applications.
+  doc_url: https://litestar-org.github.io/litestar-htmx/latest/
   dev_url: https://github.com/litestar-org/litestar-htmx
 
 extra:
