@@ -1,0 +1,45 @@
+{% set name = "litestar-htmx" %}
+{% set version = "0.5.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litestar_htmx-{{ version }}.tar.gz
+  sha256: e02d1a3a92172c874835fa3e6749d65ae9fc626d0df46719490a16293e2146fb
+
+build:
+  number: 0
+  skip: true  # [py<39]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python
+    - pip
+    - hatchling
+  run:
+    - python
+
+test:
+  imports:
+    - litestar_htmx
+  requires:
+    - pip
+  commands:
+    - pip check
+
+about:
+  home: https://github.com/litestar-org/litestar-htmx
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: HTMX Integration for Litestar
+  description: HTMX Integration for Litestar
+  doc_url: https://github.com/litestar-org/litestar-htmx
+  dev_url: https://github.com/litestar-org/litestar-htmx
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
