@@ -21,7 +21,8 @@ requirements:
     - hatchling
   run:
     - python
-    - litestar
+  run_constrained:
+    - litestar >=2.0
 
 test:
   imports:
@@ -38,7 +39,7 @@ about:
   license_file: LICENSE
   summary: HTMX Integration for Litestar
   description: Litestar HTMX provides request and response classes, types, and a plugin for working with HTMX in Litestar applications.
-  doc_url: https://litestar-org.github.io/litestar-htmx/latest/
+  doc_url: https://litestar-org.github.io/litestar-htmx
   dev_url: https://github.com/litestar-org/litestar-htmx
 
 extra:
