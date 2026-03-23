@@ -24,9 +24,8 @@ requirements:
     - litestar >=2.19.0
 
 test:
-  # import test skipped during bootstrap: litestar not yet in pkgs/main
-  # imports:
-  #   - litestar_htmx
+  imports:
+    - litestar_htmx
   requires:
     - pip
   commands:
