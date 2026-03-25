@@ -21,15 +21,20 @@ requirements:
     - hatchling
   run:
     - python
-    - litestar >=2.19.0
 
 test:
+  source_files:
+    - tests
   imports:
     - litestar_htmx
   requires:
     - pip
+    - pytest
+    - anyio
+    - litestar
   commands:
     - pip check
+    - pytest tests/ -x -v
 
 about:
   home: https://github.com/litestar-org/litestar-htmx
