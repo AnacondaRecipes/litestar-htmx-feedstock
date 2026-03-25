@@ -23,18 +23,13 @@ requirements:
     - python
 
 test:
-  source_files:
-    - tests
-  imports:
-    - litestar_htmx
   requires:
     - pip
-    - pytest
-    - anyio
-    - litestar
   commands:
     - pip check
-    - pytest tests/ -x -v
+    # TODO: re-enable after litestar is released to pkgs/main
+    # imports: [litestar_htmx]  (imports litestar internally)
+    # pytest tests/ -x -v  (needs: pytest, anyio, litestar in test requires + source_files: [tests])
 
 about:
   home: https://github.com/litestar-org/litestar-htmx
