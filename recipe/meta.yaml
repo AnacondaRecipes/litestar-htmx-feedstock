@@ -10,7 +10,7 @@ source:
   sha256: e02d1a3a92172c874835fa3e6749d65ae9fc626d0df46719490a16293e2146fb
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -23,13 +23,18 @@ requirements:
     - python
 
 test:
+  source_files:
+    - tests
+  imports:
+    - litestar_htmx
   requires:
     - pip
+    - pytest
+    - anyio
+    - litestar
   commands:
     - pip check
-    # TODO: re-enable after litestar is released to pkgs/main
-    # imports: [litestar_htmx]  (imports litestar internally)
-    # pytest tests/ -x -v  (needs: pytest, anyio, litestar in test requires + source_files: [tests])
+    - pytest tests/ -x -v
 
 about:
   home: https://github.com/litestar-org/litestar-htmx
