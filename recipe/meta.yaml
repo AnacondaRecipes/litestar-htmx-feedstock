@@ -33,6 +33,7 @@ test:
     - anyio
     - litestar
     - jinja2
+    - mako
   commands:
     - pip check
     - pytest tests/ -x -v
